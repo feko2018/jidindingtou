@@ -74,7 +74,7 @@ if __name__ == '__main__':
         if "%"  in str(i[3]):
             var=float(i[3].strip('%'))
             ret_dist[i[0]]=var
-    ret_num=len(ret_dist)
+
     week_dist={}
     for i in range(1,7):
         week_dist["星期%s"%(i)]=0
@@ -88,13 +88,11 @@ if __name__ == '__main__':
             week='星期%s'%(week+1)
         week_dist[week] +=v
 
+    print(week_dist)
     ##输出
     print("--------定投基金涨幅--------")
     print("基金代号：%s"%(code))
     print("查询时间段：%s 至 %s "%(start_date,end_date))
     print("按周涨幅如下：")
     for k,v in  week_dist.items():
-        print("%s：%s"%(k,"%.2f%%" % ((v/ret_num) * 100)))
-
-
-
+        print("%s：%s"%(k,"%.2f%%" % (v)))
