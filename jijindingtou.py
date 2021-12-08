@@ -73,9 +73,7 @@ if __name__ == '__main__':
     for i in fund_df:
         if "%"  in str(i[3]):
             var=float(i[3].strip('%'))
-            if var != 0:
-                if var >0:
-                    ret_dist[i[0]]=var
+            ret_dist[i[0]]=var
     ret_num=len(ret_dist)
     week_dist={}
     for i in range(1,7):
